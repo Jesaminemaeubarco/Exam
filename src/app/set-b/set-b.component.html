@@ -1,0 +1,68 @@
+<div class="container-fluid border">
+    <h2 class="h2 text-center mt-3 bg-secondary text-light py-2">Final Examination - Set B</h2>
+
+    <div class="text-end mt-3"><a routerLink="" class="btn btn-outline-success">Set A</a></div>
+    
+    <form class="container-fluid bg-warning col-sm-8 col-lg-4 border mt-3 rounded" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+ 
+        <h2 class="h2 text-center py-2 rounded bg-light mt-2">Registration Form</h2>
+        <div class="form-group">
+          <label class="form-label" for="name">Name:</label>
+          <input class="form-control" id="name" formControlName="name" />
+          <div *ngIf="name?.invalid && name?.touched">
+            <small class="text-danger" *ngIf="name?.hasError('required')">*Name is required.</small>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label class="form-label" for="email">Email:</label>
+          <input class="form-control" id="email" formControlName="email" />
+          <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+            <small class="text-danger" *ngIf="email?.hasError('required')">*Email is required.</small>
+            <small class="text-danger" *ngIf="email?.hasError('email')">*Invalid email format.</small>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label class="form-label" for="lastName">Last Name:</label>
+          <input class="form-control" id="lastName" formControlName="lastName" />
+          <div *ngIf="lastname?.invalid && lastname?.touched">
+            <small class="text-danger" *ngIf="lastname?.hasError('required')">*Last Name is required.</small>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label class="form-label" for="mobile">Mobile Number:</label>
+          <input class="form-control" id="mobile" formControlName="mobile" />
+          <div *ngIf="mobile?.invalid && mobile?.touched">
+            <small class="text-danger" *ngIf="mobile?.hasError('required')">*Mobile number is required.</small>
+            <small class="text-danger" *ngIf="mobile?.hasError('pattern')">*Mobile number must be numeric.</small>
+          </div>
+        </div>
+    
+        <div class="form-group">
+            <label class="form-label" for="username">Username:</label>
+            <input class="form-control" id="username" formControlName="username" />
+            <div *ngIf="registrationForm.get('username')?.invalid && registrationForm.get('username')?.touched">
+              <small class="text-danger" *ngIf="username?.hasError('required')">*Username is required.</small>
+              <small class="text-danger" *ngIf="username?.hasError('email')">*Invalid email format.</small>
+            </div>
+          </div>
+        
+          <div class="form-group">
+            <label class="form-label" for="password">Password:</label>
+            <input class="form-control" type="password" id="password" formControlName="password" />
+            <div *ngIf="password?.invalid && password?.touched">
+              <small class="text-danger" *ngIf="password?.hasError('required')">*Password is required.</small>
+              <small class="text-danger" *ngIf="password?.hasError('strongPassword') && !password?.hasError('required')">*Password must contain an uppercase, lowercase, a number and a special character and must be at least 8 characters long.</small>
+            </div>
+          </div>
+        <div class="my-3 text-center">
+          <button class="btn btn-primary" type="submit" [disabled]="registrationForm.invalid">Register</button>
+        </div>
+    </form>
+
+    <div class="mt-2 text-center">
+        <p>Jesamine Mae Ubarco. BSIT - 3B</p>
+    </div>
+</div>

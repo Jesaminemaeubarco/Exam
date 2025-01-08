@@ -1,0 +1,43 @@
+<div class="container-fluid border">
+    <h2 class="h2 text-center mt-3 bg-secondary text-light py-2">Final Examination - Set A</h2>
+    
+    <div class="text-end mt-3"><a routerLink="/setB" class="btn btn-outline-success">Set B</a></div>
+    
+    <div class="container-fluid border py-3 mt-3">
+        <strong>1. How to create reactive forms?</strong>
+        <p>Answer: To create reactive forms in Angular, first import the ReactiveFormsModule in your app module. Then, define a FormGroup in your component, initializing it with FormControl instances for each form field. Bind the form in your template using formGroup and formControlName directives to manage user input and validations effectively. This approach allows for better control over form state and validation logic directly within the component class.</p><hr>
+
+        <strong>2. How to add built-in validation for email in reactive form?</strong>
+        <p>Answer: To add built-in email validation in a reactive form, you'll need to use Angular's Validators class. Start by importing Validators from angular/forms, then in your component class, define your FormGroup by creating an email FormControl with both Validators.required and Validators.email like this: new FormGroup(&#123; email: new FormControl('', [Validators.required, Validators.email]) &#125;). The Validators.email will check if the input matches a basic email pattern with an &#64; symbol and proper domain structure. You can access validation errors through the email form control's errors property - for example, myForm.get('email').errors?.['email'] will be true if the email format is invalid. To display validation messages in your template, you can check these error states and show appropriate feedback to users when the email format doesn't meet requirements.</p><hr>
+
+        <strong>3. How to add built-in validation for required fields in reactive form?</strong>
+        <p>Answer: To add built-in validation for required fields in an Angular reactive form, use the Validators.required validator when defining your form controls within a FormGroup. For example, initialize a control with this.myForm = this.fb.group(&#123; name: ['', Validators.required] &#125;);. In your template, you can display error messages conditionally based on the control's validity, ensuring users are informed when required fields are not filled out.</p><hr>
+
+        <strong>4. How to add regex validation for reactive forms?</strong>
+        <p>Answer: To add regex validation in Angular reactive forms, utilize the Validators.pattern() method. Define a form control within a FormGroup, applying the regex pattern as a validator. For instance, to validate an email format, initialize the control like this: this.myForm = this.fb.group( email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+&#64;[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,4&#125;$/)]] ;);. This ensures that user inputs conform to specified patterns.</p><hr>
+
+        <strong>5. How to generate routing?</strong>
+        <p>Answer: To generate routing in an Angular application, create a routing module by adding a file named app-routing.module.ts. Import NgModule, Routes, and RouterModule from &#64;angular/router, define your routes in a constant array, and configure the router using RouterModule.forRoot(routes). Finally, export the module and include a router-outlet tag in your main component template to display routed components.</p><hr>
+
+        <strong>6. How to configure routes with parameters?</strong>
+        <p>Answer: To configure routes with parameters in Angular, define the route using a colon to denote the parameter in the path. For example, set up a route like &#123; path: 'product-details/:id', component: ProductDetailsComponent &#125;. Use the routerLink directive in your template to navigate to this route and access the parameter in your component using the ActivatedRoute service to retrieve it from the route parameters.</p><hr>
+
+        <strong>7. What is debouncedTime in RxJs?</strong>
+        <p>Answer: debounceTime is an operator in RxJS that delays emissions from an observable until a specified duration has passed without any new value being emitted. </p><hr>
+        
+        <strong>8. What is pipe operator?</strong>
+        <p>Answer: The pipe operator (|>) is used to chain function calls by passing the output of one function as input to another function in a readable left-to-right manner.</p><hr>
+
+        <strong>9. What is distinctUntilChanged operator?</strong>
+        <p>Answer: The distinctUntilChanged operator filters out consecutive duplicate emissions from an observable by only emitting values that differ from the last emitted value. </p><hr>
+
+        <strong>10. What is filter operator in RxJs?</strong>
+        <p>Answer: The filter operator in RxJS allows you to selectively emit values from an observable based on a predicate function that returns a boolean value.</p>
+
+    </div>
+
+    <div class="mt-2 text-center">
+        <p>Jesamine Mae Ubarco. BSIT - 3B</p>
+    </div>
+
+</div>
